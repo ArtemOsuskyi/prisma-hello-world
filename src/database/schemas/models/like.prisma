@@ -1,0 +1,11 @@
+model Like {
+  id           Int      @id @default(autoincrement())
+  liker        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId       Int
+  postLiked    Post?    @relation(fields: [postId], references: [id])
+  commentLiked Comment? @relation(fields: [commentId], references: [id])
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  postId       Int?
+  commentId    Int?
+}
