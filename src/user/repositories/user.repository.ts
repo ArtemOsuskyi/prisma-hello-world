@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 import { User } from '@prisma/client';
 import { UserUpdateDto } from '../dtos/user-update.dto';
-import { excludeProperties } from '../../util/exclude-properties';
+import { excludeProperties } from '../../util/decorators/exclude-properties';
 
 @Injectable()
 export class UserRepository {

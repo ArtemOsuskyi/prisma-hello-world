@@ -6,6 +6,6 @@ model User {
   password  String
   firstName String   @db.VarChar(20)
   lastName  String   @db.VarChar(20)
-  posts     Post[]
+  tweets    Tweet[]
   likes     Like[]
 }

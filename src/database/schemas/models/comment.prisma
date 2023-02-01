@@ -1,8 +1,9 @@
 model Comment {
-  id          Int      @id @default(autoincrement())
-  repliedPost Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
-  postId      Int
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  likes       Like[]
+  id           Int      @id @default(autoincrement())
+  repliedTweet Tweet    @relation(fields: [tweetId], references: [id], onDelete: Cascade)
+  tweetId      Int
+  likes        Like[]
+  viewedCount  Int
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
